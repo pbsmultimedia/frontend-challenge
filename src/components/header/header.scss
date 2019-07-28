@@ -1,0 +1,43 @@
+.header {
+	height: 50px;
+	background: #fff;
+	box-shadow: 0 2px 2px rgba(0,0,0,.25);	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+
+    &__row {
+		width: 100%;
+		max-width: 710px;
+		display: flex;
+		align-items: center;
+		position: relative;
+	}
+
+	&__title {
+		display: inline;
+		font-family: "Montserrat", sans-serif;
+	    font-weight: 500;
+	    font-size: 18px;
+	    color: #414c5e;
+	    padding-left: 22px;
+	}
+
+}
+
+// TO-DO: BEM
+.header__nav {
+	display: inline;
+	position: absolute;
+	right: 22px;
+}
+
+.header__item {
+	list-style-type: none;
+	margin: 0;
+    padding: 0;
+}
