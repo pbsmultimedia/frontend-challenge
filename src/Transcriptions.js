@@ -37,10 +37,5 @@ export default class Transcriptions extends React.Component {
 		this.setState(prevState => ({
 			headerNavbarLinks: [...prevState.headerNavbarLinks, links]	
 		}))
-	}
-
-	handle = () => {
-		console.log("handled!");
-	}
-
+	}	
 }
