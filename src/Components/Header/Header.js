@@ -1,8 +1,7 @@
 import React from "react";
 import "./header.scss";
 
-let Header = (props) => 
-{	
+let Header = (props) => {	
 	return (
 		<header className="header">
 			<div className="header__row">

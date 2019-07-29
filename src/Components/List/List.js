@@ -9,7 +9,6 @@ import { ReactComponent as AddIcon } from "../../img/add.svg";
 
 class List extends React.Component  
 {
-
 	constructor(props) {
 		super(props);
 
@@ -25,6 +24,7 @@ class List extends React.Component
 				<button
 					onClick={this.uploadTranscriptions} 
 					title="upload transcriptions"
+					id="upload-transcriptions"
 					key="upload-transcriptions"
 				>
 					<UploadIcon />
@@ -32,6 +32,7 @@ class List extends React.Component
 				<button 
 					onClick={this.fetchTranscriptions}
 					title="fetch transcriptions"
+					id="fetch-transcriptions"
 					key="fetch-transcriptions"
 				>
 					<FetchIcon />
@@ -41,9 +42,8 @@ class List extends React.Component
 
 	}
 	
-	scrollIntoView = () => {
-		// scroll to bottom to show the last results
-		
+	// scroll to bottom to show the last results
+	scrollIntoView = () => {				
 		document.getElementById("transcriptions-add-btn").scrollIntoView({
   			behavior: 'smooth'
 		}); 				
@@ -132,7 +132,6 @@ class List extends React.Component
 	}
 
 	addTranscriptionListItem = () => {		
-
 		this.setState(prevState => ({
 			transcriptions: [
 				...prevState.transcriptions, 
@@ -141,11 +140,9 @@ class List extends React.Component
 		}));
 		this.scrollIntoView();		
 	}	
-
-	
-	fetchTranscriptions = () => {		
-
-		axios.get(this.endpoint+"?page="+this.state.page)
+		
+	fetchTranscriptions = async () => {		
+		await axios.get(this.endpoint+"?page="+this.state.page)
 		.then(r => {			
 			this.setState(prevState => ({
 				transcriptions: [
@@ -162,15 +159,13 @@ class List extends React.Component
 		});			
 	}
 
-	uploadTranscriptions = () => {
-		
+	uploadTranscriptions = () => {		
 		if (!this.state.transcriptions.length) {
 			alert("no transcriptions to upload");
 			return;
 		}
 
 		if (window.confirm("upload all?")) {
-
 			axios.post(
 				this.endpoint, 
 				{ 
@@ -191,7 +186,6 @@ class List extends React.Component
 	}
 
 	deleteItem = (id) => {
-
 		if (window.confirm("delete this transcription?")) {
 			this.state.transcriptions.splice(id,1);
 			this.setState({
@@ -200,8 +194,7 @@ class List extends React.Component
 		}		
 	}
 
-	updateItem = (type, e, k) => {
-				
+	updateItem = (type, e, k) => {				
 		let transcriptions = this.state.transcriptions;
 		transcriptions[k][type] = e.target.innerText;
 		

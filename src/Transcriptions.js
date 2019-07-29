@@ -9,15 +9,13 @@ export default class Transcriptions extends React.Component {
 	{
 		super();	
 		
-		this.state = {
-			transcriptions: [],			
+		this.state = {					
 			headerNavbarLinks: [] // pass links to navbar
 		}
 		
 	}
 
 	render() {	
-
 		return (
 			<React.Fragment>				
 				<Header 
@@ -39,6 +37,10 @@ export default class Transcriptions extends React.Component {
 		this.setState(prevState => ({
 			headerNavbarLinks: [...prevState.headerNavbarLinks, links]	
 		}))
+	}
+
+	handle = () => {
+		console.log("handled!");
 	}
 
 }
