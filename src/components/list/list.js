@@ -19,7 +19,7 @@ class List extends React.Component
 		}
 
 		this.endpoint = "http://www.mocky.io/v2/5ae1c5792d00004d009d7e5c";
-		
+				
 		this.props.setHeaderNavbarLinks(
 			[
 				<button
@@ -40,12 +40,13 @@ class List extends React.Component
 		);
 
 	}
-
-	componentDidUpdate () {
+	
+	scrollIntoView = () => {
 		// scroll to bottom to show the last results
+		
 		document.getElementById("transcriptions-add-btn").scrollIntoView({
   			behavior: 'smooth'
-		}); 
+		}); 				
 	}
 
 	render () {
@@ -121,7 +122,7 @@ class List extends React.Component
 					<button 
 						onClick={ this.addTranscriptionListItem } 
 						title="add new transcription"
-						id="transcriptions-add-btn"
+						id="transcriptions-add-btn"						
 					>
 						<AddIcon />
 					</button>
@@ -137,7 +138,8 @@ class List extends React.Component
 				...prevState.transcriptions, 
 				{"id":"", "voice":"Enter voice here", "text":"Enter text here"} // id of new items should be defined on the backend.
 			]
-		}))		
+		}));
+		this.scrollIntoView();		
 	}	
 
 	
@@ -151,7 +153,8 @@ class List extends React.Component
 					...r.data				
 				],
 				page: prevState.page + 1	
-			}))			
+			}));
+			this.scrollIntoView();
 		})
 		.catch(e => {			
 			console.log(e);
