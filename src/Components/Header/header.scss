@@ -27,17 +27,15 @@
 	    padding-left: 22px;
 	}
 
-}
+	&__nav {
+		display: inline;
+		position: absolute;
+		right: 22px;
+	}
 
-// TO-DO: BEM
-.header__nav {
-	display: inline;
-	position: absolute;
-	right: 22px;
-}
-
-.header__item {
-	list-style-type: none;
-	margin: 0;
-    padding: 0;
+	&__item {
+		list-style-type: none;
+		margin: 0;
+	    padding: 0;
+	}
 }

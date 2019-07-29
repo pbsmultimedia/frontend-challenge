@@ -23,8 +23,7 @@
 	}
 
 	&__checkbox-wrapper,
-	&__face-icon-wrapper {
-		//width: 10%;				
+	&__face-icon-wrapper {					
 		display: flex;
 		justify-content: center;
 		color: #34A5FF;
@@ -53,10 +52,8 @@
 			width: 9px;
 			height: 4px;
 			border-left: 2px solid #fff;
-			border-bottom: 2px solid #fff;
-			//animation: x 1s forwards;			
-			transform: rotate(-45deg);
-			//left: 1px;
+			border-bottom: 2px solid #fff;					
+			transform: rotate(-45deg);			
 			top: 2px;
 		}		
 	}
@@ -70,14 +67,7 @@
 	&__face-icon-wrapper {
 		padding-left: 16px;
 	}
-
-	/*
-	&__face-icon {
-		width: 26px;
-		height: 26px;			
-	}
-	*/
-
+	
 	&__voice,
 	&__text {
 		cursor: pointer;
@@ -124,15 +114,7 @@
 		height: auto;
 		overflow: visible;
 	}
-
-	//&_text:focus ~ .transcriptions__delete-wrapper {
-	/*
-	&__checkbox:checked ~ &__delete-wrapper {
-		opacity: 1;
-		border: 1px dotted red;
-	}
-	*/
-
+	
 	&__item:hover &__face-icon-wrapper {
 		color: #859eff; // use variables?
 	}
