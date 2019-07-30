@@ -1,4 +1,17 @@
-# Frontend Challenge
+# Unbabel Frontend Challenge
+
+Challenge accepted! 
+
+Check the result at:
+
+[http://unbabel.pbs.pt](http://unbabel.pbs.pt)
+
+## How to run it
+
+npm i
+npm run start
+
+### Original text bellow
 
 The goal is to understand how knowledgeable you are and how well you structure your app.
 
