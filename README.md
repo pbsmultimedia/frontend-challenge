@@ -9,6 +9,7 @@ Check the result at:
 ## How to run it
 
 npm i
+
 npm run start
 
 ### Original text bellow
